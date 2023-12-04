@@ -1,28 +1,53 @@
+<!-- src/App.vue -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link class="a" to="/men-clothing" exact>Men's Clothing</router-link>
+    <router-link class="b" to="/women-clothing" exact>Women's Clothing</router-link>
+    <router-view />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+}
+
+#app .a,
+#app .b {
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#app .a {
+  color: #002772;
+  border: 3px solid #002772;
+}
+
+#app .b {
+  color: #720060;
+  border: 3px solid #720060;
+}
+
+#app .a:hover {
+  background-color: #002772;
+  color: #fff;
+}
+
+#app .b:hover {
+  background-color: #720060;
+  color: #fff;
+}
+
+#app .a.router-link-exact-active {
+  background-color: #002772;
+  color: #fff;
+}
+#app .b.router-link-exact-active {
+  background-color: #720060;
+  color: #fff;
 }
 </style>
